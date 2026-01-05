@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Pipeline runtime files
+.pipeline/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Output directories (optional - uncomment if you don't want to track outputs)
+# 0_fastq/
+# 1_trimming/
+# 2_align/
+# 3_variantCall/
+# 4_msa/
+# 5_summary/
+# logs/
+# reference/
+
+# Temporary files
+*.tmp
+*.bak
