@@ -480,8 +480,13 @@ When modifying scripts, ensure:
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Contact
+## Citation
 
-[Add contact information]
+If you use this pipeline in your research, please cite:
+
+```
+Influenza Vaccine NGS Analysis Pipeline
+https://github.com/YOUR_USERNAME/vaccine-ngs-pipeline
+```
