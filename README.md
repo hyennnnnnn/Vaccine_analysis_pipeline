@@ -1,4 +1,4 @@
-# GC Pipeline - Influenza Sequencing Data Analysis
+# Vaccine analysis pipeline
 
 A robust, resumable bioinformatics pipeline for analyzing influenza sequencing data with comprehensive progress tracking and error handling.
 
