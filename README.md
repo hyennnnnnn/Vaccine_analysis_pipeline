@@ -15,10 +15,10 @@ A robust, resumable bioinformatics pipeline for analyzing influenza sequencing d
 ## Directory Structure
 
 ```
-GC_analysis/
+analysis/
 ├── setup.sh                              # 1. Project setup script
-├── GC_pipeline.sh                        # 2. Analysis pipeline script (sequential)
-├── GC_pipeline_parallel.sh               # 2. Analysis pipeline script (parallel)
+├── pipeline.sh                        # 2. Analysis pipeline script (sequential)
+├── pipeline_parallel.sh               # 2. Analysis pipeline script (parallel)
 ├── README.md                             # Documentation
 ├── .pipeline/                            # Pipeline state markers (auto-generated)
 └── scripts/                              # Internal helper scripts
@@ -39,7 +39,7 @@ GC_analysis/
 
 **You only need to run two scripts:**
 1. `setup.sh` - One-time project setup
-2. `GC_pipeline.sh` - Analysis pipeline (can be run multiple times)
+2. `pipeline.sh` - Analysis pipeline (can be run multiple times)
 
 The numbered scripts in `scripts/` are internal helpers called automatically.
 
@@ -65,10 +65,10 @@ conda activate vac_env
 conda install -c conda-forge biopython pandas matplotlib pillow
 ```
 
-Or use a different environment name by setting the `GC_CONDA_ENV` variable:
+Or use a different environment name by setting the `CONDA_ENV` variable:
 
 ```bash
-export GC_CONDA_ENV=my_custom_env
+export CONDA_ENV=my_custom_env
 ```
 
 ## Configuration
@@ -121,7 +121,7 @@ bash setup.sh \
 
 **Then run the pipeline:**
 ```bash
-bash GC_pipeline.sh \
+bash pipeline.sh \
   --region avianflu \
   --year 2025 \
   --strain A_H5N1 \
@@ -155,7 +155,7 @@ ls /path/to/project/GreenCross_flu_southern_2024/A_H3N2/0_fastq/*_1.fastq.gz | \
 
 **Step 3: Run the pipeline:**
 ```bash
-bash GC_pipeline.sh \
+bash pipeline.sh \
   --region southern \
   --year 2024 \
   --strain A_H3N2 \
@@ -167,7 +167,7 @@ bash GC_pipeline.sh \
 If the pipeline is interrupted, simply re-run the same command:
 
 ```bash
-bash GC_pipeline.sh \
+bash pipeline.sh \
   --region southern \
   --year 2024 \
   --strain A_H3N2 \
@@ -426,7 +426,7 @@ rm -rf .pipeline/
 ### Disable Verbose Output
 
 ```bash
-VERBOSE=0 bash GC_pipeline.sh \
+VERBOSE=0 bash pipeline.sh \
   --region southern \
   --year 2024 \
   --strain A_H3N2 \
@@ -445,7 +445,7 @@ echo "sample005" > /path/to/project/GreenCross_flu_southern_2024/A_H3N2/subset.t
 echo "sample006" >> /path/to/project/GreenCross_flu_southern_2024/A_H3N2/subset.txt
 
 # Run pipeline
-bash GC_pipeline.sh \
+bash pipeline.sh \
   --region southern \
   --year 2024 \
   --strain A_H3N2 \
